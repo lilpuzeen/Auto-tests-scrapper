@@ -44,13 +44,14 @@ class CustomThread(threading.Thread):
 
 
 def main():
-    threads_number = 3
-    threads = []
-    name = "Товмасян Арман Эдикович"  # Your ФИО goes here
+    name = "Кистер Артемий Алексеевич"  # Your ФИО goes here
     links = ["https://www.kgeorgiy.info/upload/paradigms/linux/table.html",
              "https://www.kgeorgiy.info/upload/paradigms/windows/table.html",
              "https://www.kgeorgiy.info/upload/paradigms/macos/table.html"]
     systems = ["Linux", "Windows", "MacOS"]
+
+    threads_number = 3
+    threads = []
     for number in range(threads_number):
         t = CustomThread(links[number], systems[number], name)
         t.start()
