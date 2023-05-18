@@ -1,4 +1,6 @@
 import threading
+import datetime
+
 import selenium
 import selenium.webdriver
 from selenium.webdriver.common.by import By
@@ -58,8 +60,18 @@ def main():
         thread.join()
 
     data = CustomThread.get_data()
-    for thread_data in data:
-        print(thread_data)
+
+    failed_tests = 0
+    for i in range(len(data)):
+        failed_tests += data[i].count(" −")
+
+    with open("output.txt", "w") as file:
+        for thread_data in data:
+            file.write(thread_data + "\n")
+        file.write(("=" * 30) + "\n")
+        file.write("AutoTests\n")
+        file.write(f"{failed_tests} tests failed\n")
+        file.write(f"Version: {datetime.datetime.now()}\n")
 
 
 if __name__ == '__main__':
