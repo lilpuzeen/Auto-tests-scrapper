@@ -2,7 +2,7 @@
 
 Hello! This project made only for year-2022 students of Computer Technologies faculty, ITMO University. 
 
-This project scraps information from auto-tests logs for all systems (Linux, Windows, MacOS) and shows you which tests have been passed and failed.
+This project scraps information from auto-tests logs (paradigms-course y2022-2023) for all systems (Linux, Windows, MacOS) and shows you which tests have been passed and failed.
 
 ## Installation
 Clone the repository using 
